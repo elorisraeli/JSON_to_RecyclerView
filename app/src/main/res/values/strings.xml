@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JSON_to_recyclerView</string>
+    <string name="id">Id</string>
+    <string name="employee_salary">Employee Salary</string>
+    <string name="employee_name">Employee Name</string>
+    <string name="employee_age">Employee Age</string>
+    <string name="todo">TODO</string>
+</resources>
