@@ -1,16 +1,14 @@
 package com.example.json_to_recyclerview
 
 import android.app.AlertDialog
-import android.graphics.Movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.json_to_recyclerview.Adapter.MainAdapter
-import com.example.json_to_recyclerview.Common.Common
-import com.example.json_to_recyclerview.Interface.RetrofitService
-import com.example.json_to_recyclerview.Model.Data
-import com.example.json_to_recyclerview.Model.OfficeResponse
+import com.example.json_to_recyclerview.Network.Common
+import com.example.json_to_recyclerview.Network.RetrofitService
+import com.example.json_to_recyclerview.Network.Model.OfficeResponse
 import dmax.dialog.SpotsDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
@@ -64,18 +62,19 @@ class MainActivity : AppCompatActivity() {
     private fun getAllMovieList() {
         dialog.show()
 
-        mService.getMovieList().enqueue(object : Callback<MutableList<Data>> {
-            override fun onFailure(call: Call<MutableList<Data>>, t: Throwable) {
+        mService.getMovieList().enqueue(object : Callback<OfficeResponse> {
+            override fun onFailure(call: Call<OfficeResponse>, t: Throwable) {
                 Log.d("tag", "SOMETHING WENT WRONG!")
             }
 
             override fun onResponse(
-                call: Call<MutableList<Data>>,
-                response: Response<MutableList<Data>>
+                call: Call<OfficeResponse>,
+                response: Response<OfficeResponse>
             ) {
-                adapter = MainAdapter(baseContext, response.body() as MutableList<Data>)
+                adapter = MainAdapter(baseContext, response.body() as OfficeResponse)
                 adapter.notifyDataSetChanged()
                 recyclerView.adapter = adapter
+                Log.d("tag", "Response: ${response.body().toString()}")
 
                 dialog.dismiss()
             }

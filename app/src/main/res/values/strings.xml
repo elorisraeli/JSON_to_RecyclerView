@@ -5,4 +5,5 @@
     <string name="employee_name">Employee Name</string>
     <string name="employee_age">Employee Age</string>
     <string name="todo">TODO</string>
+    <string name="textview">TextView</string>
 </resources>

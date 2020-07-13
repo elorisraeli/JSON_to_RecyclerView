@@ -46,4 +46,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
 
+    def view_model_version = "2.2.0-rc02"
+    implementation "androidx.lifecycle:lifecycle-extensions:$view_model_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$view_model_version"
+
+
 }

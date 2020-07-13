@@ -1,4 +1,4 @@
-package com.example.json_to_recyclerview.Model
+package com.example.json_to_recyclerview.Network.Model
 
 
 import com.google.gson.annotations.SerializedName
