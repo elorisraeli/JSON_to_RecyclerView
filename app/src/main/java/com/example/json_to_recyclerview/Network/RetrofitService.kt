@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface RetrofitService {
     @GET("employees")
-    fun getMovieList(): Call<OfficeResponse>
+    fun getEmployeesList(): Call<OfficeResponse>
 }

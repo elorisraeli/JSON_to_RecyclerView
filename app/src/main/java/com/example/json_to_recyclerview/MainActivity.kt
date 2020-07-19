@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         dialog = SpotsDialog.Builder().setCancelable(false).setContext(this).build()
 
-        getAllMovieList()
+        getAllEmployeesList()
 
 //        myAdapter = MainAdapter(datalist)
 //        recyclerView.adapter = myAdapter
@@ -59,10 +59,10 @@ class MainActivity : AppCompatActivity() {
 //            })
     }
 
-    private fun getAllMovieList() {
+    private fun getAllEmployeesList() {
         dialog.show()
 
-        mService.getMovieList().enqueue(object : Callback<OfficeResponse> {
+        mService.getEmployeesList().enqueue(object : Callback<OfficeResponse> {
             override fun onFailure(call: Call<OfficeResponse>, t: Throwable) {
                 Log.d("tag", "SOMETHING WENT WRONG!")
             }

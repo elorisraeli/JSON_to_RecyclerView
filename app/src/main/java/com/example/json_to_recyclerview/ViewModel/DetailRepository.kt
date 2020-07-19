@@ -18,7 +18,7 @@ class DetailRepository(val context: Context) {
 
     val response = MutableLiveData<OfficeResponse>()
 
-    val service = Common.retrofitService.getMovieList().enqueue(object : Callback<OfficeResponse> {
+    val service = Common.retrofitService.getEmployeesList().enqueue(object : Callback<OfficeResponse> {
         override fun onFailure(call: Call<OfficeResponse>, t: Throwable) {
             Log.d("tag", "Something Go Wrong!!")
         }
